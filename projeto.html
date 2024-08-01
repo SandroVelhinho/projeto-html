@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html {
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(to right, rgb(58, 0, 58), rgb(184, 0, 184));
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nav {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: large;
+            display: inline;
+
+        }
+
+        .nav:hover {
+            background-color: rgb(168, 34, 168);
+            border-radius: 20px;
+            transition: 0.5s;
+        }
+
+        .list {
+            margin-left: 13%;
+            list-style-type: none;
+            display: flex;
+        }
+
+        .list li {
+            margin-right: 10px;
+        }
+
+        .h1 {
+            color: white;
+            font-size: 3em;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .buton {
+            color: rgb(255, 0, 255);
+            font-size: large;
+            text-decoration: none;
+            border: solid 1px rgb(255, 0, 255);
+            padding: 10px;
+            border-radius: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+
+
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            justify-content: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 5%;
+
+        }
+
+        .grid-items {
+            text-align: center;
+        }
+
+        .grid-items img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .last-img {
+            max-width: 70%;
+            max height: auto;
+            border-radius: 10px;
+            margin: 15px
+        }
+
+
+        .buton:hover {
+            background-color: rgb(255, 0, 255);
+            transition: 1s;
+            color: white;
+        }
+
+        .page {
+            background: linear-gradient(white, white, rgb(128, 1, 128));
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 15% 30% 15% 30%;
+            grid-template-rows: repeat(2, 10vw);
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .tabela {
+            display: grid;
+            grid-template-columns: 30% 25% 25%;
+            grid-template-rows: 10% 15% 15%;
+            text-align: center;
+            justify-content: center;
+            align-content: center;
+            row-gap: 15px;
+
+        }
+
+        .cabeçalho {
+            grid-column: span 2;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            padding: 10px;
+
+        }
+
+        .item {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        #delado {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 4;
+            flex-direction: row;
+            margin-top: 15%;
+        }
+
+        .grid2 {
+            margin-left: 19%;
+            margin-right: 19%;
+            display: flex;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5%;
+        }
+
+        .grid2-items {
+            padding: 20px;
+            padding-bottom: 1%;
+            border: solid 1px salmon;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 4px 4px 4px rgb(197, 197, 197);
+        }
+
+        .grid3-items {
+            padding: 20px;
+            padding-bottom: 1%;
+            background: linear-gradient(to top, rgb(58, 0, 58), rgb(184, 0, 184));
+
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+            color: white;
+
+
+        }
+
+        .taller-item {
+            height: 20%;
+        }
+
+        .grid3-items li {
+            text-align: start;
+        }
+
+        .wpp-sticky {
+            position: fixed;
+            bottom: 5%;
+            left: 2%;
+            align-content: center;
+            justify-content: center;
+
+
+        }
+
+        .forms input {
+            border: solid 2px grey;
+            border-radius: 10px;
+            margin-left: 15%;
+            border-style: solid;
+            border-color: -internal-light-dark(rgb(146, 146, 146), rgb(133, 133, 133));
+            border-image: initial;
+            padding-block: 1px;
+            padding-inline: 2px;
+            border-radius: 10px;
+        }
+
+        .form {
+            border-style: solid;
+            border-color: -internal-light-dark(rgb(146, 146, 146), rgb(133, 133, 133));
+            border-image: initial;
+            padding-block: 1px;
+            padding-inline: 2px;
+            border-radius: 10px;
+        }
+
+        .tabela-forms {
+            display: grid;
+            grid-template-columns: 20% 30% 40%;
+            gap: 5%;
+            align-items: center;
+            justify-items: center;
+
+        }
+
+        .icons {
+            margin: 0;
+            bottom: 4%;
+            left: 3%;
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" class="wpp-sticky"> <img src="img/img/whatsapp@2x.png" alt="" style="width: 100%; height: auto;"></a>
+    <header style="min-height: 1000px;">
+        <div>
+            <ul class="list">
+                <li><a href="" class="nav">about</a></li>
+                <li><a href="" class="nav">our courses</a></li>
+                <li><a href="" class="nav">How it works</a></li>
+                <li><a href="" class="nav">contact us</a></li>
+            </ul>
+        </div>
+        <!--<div style="float: left;">
+            <img src="img/img/Illustration.png" alt="" style="margin-left: 30%; width: 85%; height: 85%;">
+        </div>
+        <div style="float: right; display: block; text-indent: 3em; width: 35%; margin-top: 9%;">
+            <h1 class="h1">Develop and build <br> my first robot</h1>
+            <a href="" style="background-color:rgb(255, 0, 255); border-radius: 20px; padding: 10px; text-decoration: none;color: white;padding-left: 30px;
+            padding-right: 30px;">All courses</a>
+            <a href="" class="buton">show me more</a>
+    
+    
+    
+        </div>-->
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="display: flex; justify-content: flex-end;">
+                <img src="img/img/Illustration.png" alt="" style="width: 85%; height: 95%;">
+            </div>
+            <div style="text-indent: 3em; width: 35%; margin-top: 9%; padding-bottom: 40px;">
+                <h1 class="h1">Develop and build <br> my first robot</h1>
+                <a href="" style="background-color:rgb(255, 0, 255); border-radius: 20px; padding: 10px; text-decoration: none;color: white;padding-left: 30px;
+                padding-right: 30px;">All courses</a>
+                <a href="" class="buton">show me more</a>
+
+
+
+            </div>
+        </div>
+    </header>
+
+    <div class="page" style="margin-top: 0;">
+
+        <h1 style="color: rgb(215, 30, 221); text-align: center; margin-top: 5%;margin-bottom: 0; display: relate;">
+            OUR STUDY TRACKS</h1>
+        <p style="color: rgb(215, 30, 221); text-align: center; display: relate;">_______________</p>
+        <p style="display: grid; grid-template-rows: 1fr; margin-left: 19%; margin-right: 19%; text-align: center;">
+            We will tell you about our courses in fields of robotics We will tell you about our courses in fields of
+            robotics We will tell you about our courses in fields of robotics We will tell you about our courses in
+            fields of robotics</p>
+        <div class="grid-container">
+            <div class="grid-items">
+                <img src="img/img/Icon 1.png" alt="">
+                <h2 style="color: rgb(215, 30, 221)">THE VISION</h2>
+                <p>Allow each and every person to learn trougpadding: 8px;, Thinking and developing the ability to
+                    create</p>
+            </div>
+            <div class="grid-items">
+                <img src="img/img/Icon 2.png" alt="">
+                <h2 style="color: rgb(215, 30, 221)">THE MISSION
+
+                </h2>
+                <p>Allow creators and product developers physical to ve one of the world leaders in</p>
+            </div>
+            <div class="grid-items">
+                <img src="img/img/icon 3.png" alt="">
+                <h2 style="color: rgb(215, 30, 221)">WE SUGGEST
+
+                </h2>
+                <p>Allow creators and product developers physical to ve one of the world leaders in</p>
+            </div>
+            <div class="grid-items">
+                <img src="img/img/icon 4.png" alt="">
+                <h2 style="color: rgb(215, 30, 221)">WE STRIVE
+
+                </h2>
+                <p>Allow creators and product developers physical to be one of the world leaders in</p>
+            </div>
+
+        </div>
+        <h1 style="color: rgb(215, 30, 221); text-align: center; margin-top: 5%;margin-bottom: 0; display: relate;">
+            OUR ROBOTS</h1>
+        <p style="color: rgb(215, 30, 221); text-align: center; display: relate;">_______________</p>
+
+        <div
+            style="display: grid; grid-template-columns: 3fr;margin-left: 10%;margin-right: 10%; justify-content: space-between;">
+            <div class="image-container" style="display: flex; align-content: center;">
+                <img class="last-img" src="img/img/234.png" alt="">
+                <img class="last-img" src="img/img/3750_3.png" alt="">
+                <img class="last-img" src="img/img/562137-PL0JE0-278.png" alt="">
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <div style="background-color: white; margin-bottom: 10%;">
+        <p style="text-align: center;">
+            ______________________________________________________________________________________________________________________________________
+        </p>
+        <h1 style="color: rgb(215, 30, 221); text-align: center; margin-top: 5%;margin-bottom: 0; display: relate;"> HOW
+            IT WORKS</h1>
+
+        <div class="grid-container">
+            <div class="grid-items"
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column;position: relative;">
+                <div
+                    style="border-radius: 50%; background: linear-gradient(to top, rgb(58, 0, 58), rgb(184, 0, 184));height: 8vw;width: 8vw; display: flex; align-items: center;justify-content: center;">
+                    <img style="height: 50%;" src="img/img/iconp4.png" alt="">
+                </div>
+                <div style="position: absolute; border: solid 2px purple; border-radius: 50%; background-color: white; width: 20px;top: 4%;
+                right: 32%; padding: 2%;">1</div>
+
+                <p style="border: dotted 2px purple; max-width: 8vw; padding: 8px;">Thinking and developing the ability
+                    to create
+                </p>
+            </div>
+            <div class="grid-items"
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative;">
+                <div
+                    style="border-radius: 50%; background: linear-gradient(to top, rgb(58, 0, 58), rgb(184, 0, 184));height: 8vw;width: 8vw; display: flex; align-items: center;justify-content: center;">
+                    <img style="height: 50%;" src="img/img/iconp3.png" alt="">
+                </div>
+                <div style="position: absolute; border: solid 2px purple; border-radius: 50%; background-color: white; width: 20px;top: 4%;
+                right: 32%; padding: 2%;">2</div>
+
+
+                <p style="border: dotted 2px purple; max-width: 8vw; padding: 8px;">Thinking and developing the ability
+                    to create
+                </p>
+            </div>
+            <div class="grid-items"
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative;">
+                <div
+                    style="border-radius: 50%; background: linear-gradient(to top, rgb(58, 0, 58), rgb(184, 0, 184));height: 8vw;width: 8vw; display: flex; align-items: center;justify-content: center;">
+                    <img style="height: 50%;" src="img/img/iconp2.png" alt="">
+                </div>
+                <div style="position: absolute; border: solid 2px purple; border-radius: 50%; background-color: white; width: 20px;top: 4%;
+                right: 32%; padding: 2%;">3</div>
+
+
+                <p style="border: dotted 2px purple; max-width: 8vw; padding: 8px;">Thinking and developing the ability
+                    to create
+                </p>
+            </div>
+            <div class="grid-items"
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative;">
+                <div
+                    style="border-radius: 50%; background: linear-gradient(to top, rgb(58, 0, 58), rgb(184, 0, 184));height: 8vw;width: 8vw; display: flex; align-items: center;justify-content: center;">
+                    <img style="height: 50%;" src="img/img/iconp1.png" alt="">
+                </div>
+                <div style="position: absolute; border: solid 2px purple; border-radius: 50%; background-color: white; width: 20px;top: 4%;
+                right: 32%; padding: 2%;">4</div>
+
+
+                <p style="border: dotted 2px purple; max-width: 8vw; padding: 8px;">Thinking and developing the ability
+                    to create
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="tabela" style="margin: 0; padding-bottom: 10%;
+    background: linear-gradient(to right, rgb(58, 0, 58), rgb(184, 0, 184));
+    background-repeat: no-repeat;
+    background-size: cover; color: white; font-size: large;">
+        <div class="cabeçalho">What will you learn and improve while developing our robots?</div>
+        <div class="item" id="delado"> <img src="img/img/illustrations web.png" alt="" style="transform: scaleX(-1);">
+        </div>
+        <div class="item"><img src="img/img/input icon.png" alt="">Input output in programming language</div>
+        <div class="item"><img src="img/img/input icon.png" alt="">Input output in programming language</div>
+        <div class="item"><img src="img/img/if icon.png" alt=""> Terms of programming language</div>
+        <div class="item"><img src="img/img/if icon.png" alt=""> Terms of programming language</div>
+    </div>
+
+    <div style="padding: 6%; background-color: rgb(241, 241, 241);padding: 2%;">
+        <h1 style="color: rgb(215, 30, 221); text-align: center; margin-top: 5%;margin-bottom: 0; display: relate;">
+            RECOMENDED</h1>
+        <p style="color: rgb(215, 30, 221); text-align: center; display: relate;">_______________</p>
+
+        <div class="grid2">
+
+            <div class="grid2-items">
+                <h4 style="text-align: right; color: rgb(215, 30, 221); margin-bottom: 0; font: bold; margin-top: 2%;">
+                    robot building course</h4>
+                <div>
+                    <p style="text-align: right; margin-top: 0; margin-bottom: 0;">Allow each and every person to learn
+                        through creation.
+                        Thinking and
+                        developing personalability. allow each and every person to learn,allow each and every person to
+                        learn,</p>
+                    <img src="img/img/sensor icon.png" alt="" style="float: left; height: 6%; width: 6%;">
+                    <div style="float: left; max-width: 134px; margin: 0; padding: 0;">Uzi Uzieli Software Engineer
+                    </div>
+                    <img src="img/img/quote.png" alt="" style="position: absolute;
+                    height: 8%;
+                    width: auto;
+                    top: -5%;
+                    right: 43%;
+                    
+                ">
+                </div>
+            </div>
+            <div class="grid2-items">
+                <h4 style="text-align: right; color: rgb(215, 30, 221); margin-bottom: 0; font: bold; margin-top: 2%;">
+                    robot building course</h4>
+                <div>
+                    <p style="text-align: right; margin-top: 0; margin-bottom: 0;">Allow each and every person to learn
+                        through creation.
+                        Thinking and
+                        developing personalability. allow each and every person to learn,allow each and every person to
+                        learn,</p>
+                    <img src="img/img/sensor icon.png" alt="" style="float: left; height: 6%; width: 6%;">
+                    <div style="float: left; max-width: 134px; margin: 0; padding: 0;">Uzi Uzieli Software Engineer
+                    </div>
+                    <img src="img/img/quote.png" alt="" style="position: absolute;
+                    height: 8%;
+                    width: auto;
+                    top: -5%;
+                    right: 43%;
+                    
+                ">
+
+                </div>
+            </div>
+            <div class="grid2-items">
+                <h4 style="text-align: right; color: rgb(215, 30, 221); margin-bottom: 0; font: bold; margin-top: 2%;">
+                    robot building course</h4>
+                <div>
+                    <p style="text-align: right; margin-top: 0; margin-bottom: 0;">Allow each and every person to learn
+                        through creation.
+                        Thinking and
+                        developing personalability. allow each and every person to learn,allow each and every person to
+                        learn,</p>
+                    <img src="img/img/sensor icon.png" alt="" style="float: left; height: 6%; width: 6%;">
+                    <div style="float: left; max-width: 134px; margin: 0; padding: 0;">Uzi Uzieli Software Engineer
+                    </div>
+                    <img src="img/img/quote.png" alt="" style="position: absolute;
+                    height: 8%;
+                    width: auto;
+                    top: -5%;
+                    right: 43%;
+                    
+                ">
+                </div>
+
+            </div>
+        </div>
+        <h1 style="color: rgb(215, 30, 221); text-align: center; margin-top: 5%;margin-bottom: 0; display: relate;">
+            RECOMENDED</h1>
+        <p style="color: rgb(215, 30, 221); text-align: center; display: relate;">_______________</p>
+
+        <div class="grid2" style="justify-content: center; align-content: center; gap: 4%;">
+            <div class="grid3-items" style="max-width: 20%; height: 200px;">
+                <h3>Monthly for the entire site <span style="color: aqua;">40</span>NIS / month</h3>
+                <div>
+                    <ul style="list-style-image: url(img/img/check-mark.png) ;">
+                        <li> Access to all courses</li>
+
+                        <li>Personal support
+                        </li>
+
+                        <li>Feedback on the works</li>
+
+                    </ul>
+                    <p>Sign Up Now</p>
+                </div>
+            </div>
+            <div class="grid3-items taller-item" style="max-width: 20%; height: 300px; transform: scale(1.2);">
+                <h3><span style="color: aqua;">399</span>Monthly for entire site</h3>
+                </h3>
+                <div>
+                    <ul style="list-style-image: url(img/img/check-mark.png) ;">
+                        <li> Access to all courses</li>
+
+                        <li>Personal support
+                        </li>
+
+                        <li>Feedback on the works</li>
+
+                    </ul>
+                    <p>Sign Up Now</p>
+                </div>
+            </div>
+            <div class="grid3-items" style="max-width: 20%; height: 200px;">
+                <h3>Monthly for the entire site <span style="color: aqua;">40</span>NIS / month</h3>
+                <div>
+                    <ul style="list-style-image: url(img/img/check-mark.png) ;">
+                        <li> Access to all courses</li>
+
+                        <li>Personal support
+                        </li>
+
+                        <li>Feedback on the works</li>
+
+                    </ul>
+                    <p>Sign Up Now</p>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top: 6%;">
+            <h1 style="color: rgb(215, 30, 221); text-align: center; margin-top: 5%;margin-bottom: 0; display: relate;">
+                Contact Us</h1>
+            <p style="color: rgb(215, 30, 221); text-align: center; display: relate;">_______________</p>
+            <div class="tabela-forms">
+
+
+                <div class="forms">
+                    <form>
+                        <input type="text" size="30" placeholder="First Name">
+                        <br>
+                        <input type="text" size="30" placeholder="Last Name">
+                        <br>
+                        <input type="text" size="30" placeholder="Phone">
+
+                    </form>
+
+                </div>
+                <div>
+                    <form>
+
+                        <textarea name="" id="" cols="90" rows="10" placeholder="Comments">
+
+
+                        </textarea>
+                        <a href="" style="background-color:rgb(255, 0, 255); border-radius: 20px; padding: 10px; text-decoration: none;color: white;padding-left: 30px;
+                            padding-right: 30px;">Send</a>
+                    </form>
+                </div>
+
+                <div>
+                    <img src="img/img/coding_ (4).png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div style="background-color: rgb(50, 31, 102); margin: 0; padding: 20px;">
+        <ul class="list">
+            <li><a href="" class="nav">Home page</a></li>
+            <li><a href="" class="nav">our robots</a></li>
+            <li><a href="" class="nav">how it works</a></li>
+            <li><a href="" class="nav">contact us</a></li>
+        </ul>
+        <div style="float: right;color: white;">@All rights reserved</div>
+        <div class="icons">
+            <img class="icons" src="img/img/twitter.png" alt="">
+            <img class="icons" src="img/img/youtube.png" alt="">
+            <img class="icons" src="img/img/facebook.png" alt="">
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
